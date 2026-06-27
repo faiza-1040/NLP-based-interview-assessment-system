@@ -1,0 +1,504 @@
+/* client/src/pages/Candidate/ManageCV.css */
+
+/* Page wrapper fills the screen; individual sections are 90% */
+.manage-cv-page {
+  width: 100%;
+  padding: 24px 0 40px;
+}
+
+/* Title – also 90% wide, centered */
+.manage-cv-title {
+  width: 90%;
+  margin: 0 auto 20px;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Job context banner */
+.manage-cv-job-context {
+  width: 90%;
+  margin: 0 auto 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.job-context-change-btn {
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  font-size: 0.85rem;
+  cursor: pointer;
+  color: #0f172a;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.job-context-change-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Alerts (success / error) */
+.manage-cv-alert {
+  width: 90%;
+  margin: 0 auto 15px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.manage-cv-alert-success {
+  background: #d1fae5;
+  border: 1px solid #10b981;
+  color: #065f46;
+}
+
+.manage-cv-alert-error {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+/* Search bar row – 90% width centered */
+.manage-cv-search-row {
+  width: 90%;
+  margin: 0 auto 18px;
+}
+
+.manage-cv-search-input-wrapper {
+  position: relative;
+  width: 100%;          /* full width of the 90% row */
+  max-width: 100%;      /* remove old 420px cap */
+}
+
+.manage-cv-search-input {
+  width: 100%;
+  padding: 10px 14px 10px 36px;
+  border-radius: 999px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.9rem;
+  color: #0f172a;
+  outline: none;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.manage-cv-search-input::placeholder {
+  color: #9ca3af;
+}
+
+.manage-cv-search-input:focus {
+  border-color: #3b82f6;
+  background: #ffffff;
+}
+
+.manage-cv-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Table card – main content box, 90% width centered */
+.manage-cv-table-card {
+  width: 90%;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+  overflow: hidden;
+}
+
+/* Fixed table layout so columns stay stable */
+.manage-cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  table-layout: fixed;
+}
+
+.manage-cv-table thead {
+  background: #f9fafb;
+}
+
+.manage-cv-table th,
+.manage-cv-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.manage-cv-table th {
+  font-weight: 600;
+  color: #4b5563;
+  text-align: center;
+}
+
+.manage-cv-table th:first-child,
+.manage-cv-table td:first-child {
+  text-align: center;
+}
+
+/* Index column 1,2,3... */
+.col-index {
+  width: 40px;
+  text-align: center;
+  color: #6b7280;
+}
+
+/* Title column – can wrap without changing box width */
+.cv-title-cell {
+  text-align: left;
+  color: #111827;
+  font-weight: 500;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Type / Date columns */
+.cv-type-cell,
+.cv-date-cell {
+  text-align: center;
+  white-space: nowrap;
+  color: #6b7280;
+}
+
+/* 🔧 Origin column (5th column) centered for all body rows */
+.manage-cv-table tbody td:nth-child(5) {
+  text-align: center;
+}
+
+.manage-cv-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+/* Actions cell */
+.manage-cv-actions-cell {
+  text-align: center;
+}
+
+.icon-btn {
+  border: none;
+  background: transparent;
+  padding: 4px;
+  cursor: pointer;
+  border-radius: 6px;
+  color: #6b7280;
+  font-size: 0.92rem;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.08s ease;
+}
+
+.icon-btn + .icon-btn {
+  margin-left: 6px;
+}
+
+.icon-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+  transform: translateY(-0.5px);
+}
+
+/* Choose button in last column */
+.manage-cv-choose-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid #3b82f6;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.manage-cv-choose-btn:hover {
+  background: #dbeafe;
+  border-color: #1d4ed8;
+}
+
+/* Empty state */
+.manage-cv-empty-cell {
+  text-align: center;
+  padding: 24px 14px;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Upload card (dropzone style) – 90% width centered */
+.manage-cv-upload-card {
+  width: 90%;
+  margin: 26px auto 0;
+  border-radius: 14px;
+  border: 2px dashed #e5e7eb;
+  background: #f9fafb;
+}
+
+.manage-cv-upload-inner {
+  text-align: center;
+  padding: 28px 16px 30px;
+}
+
+.manage-cv-upload-icon-wrapper {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background: #e0edff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+  color: #2563eb;
+  font-size: 1.2rem;
+}
+
+.manage-cv-upload-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.manage-cv-upload-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 14px;
+}
+
+.manage-cv-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  border-radius: 999px;
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s ease, transform 0.08s ease;
+}
+
+.manage-cv-upload-btn:hover {
+  background: #2563eb;
+  transform: translateY(-0.5px);
+}
+
+.manage-cv-upload-message {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .manage-cv-title,
+  .manage-cv-job-context,
+  .manage-cv-alert,
+  .manage-cv-search-row,
+  .manage-cv-table-card,
+  .manage-cv-upload-card {
+    width: 94%;
+  }
+
+  .manage-cv-title {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .manage-cv-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .manage-cv-job-context {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 10px;
+  }
+
+  .manage-cv-context-left,
+  .manage-cv-context-right {
+    width: 100%;
+  }
+
+  .manage-cv-search-row {
+    gap: 8px;
+  }
+
+  .manage-cv-search-input {
+    padding: 8px 10px;
+    font-size: 0.8rem;
+  }
+
+  .manage-cv-alert {
+    padding: 10px 12px;
+    font-size: 0.75rem;
+  }
+
+  .manage-cv-table th,
+  .manage-cv-table td {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+
+  .manage-cv-table th {
+    font-size: 0.7rem;
+  }
+
+  .manage-cv-btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+
+  .manage-cv-table-card,
+  .manage-cv-upload-card {
+    padding: 12px;
+    border-radius: 10px;
+  }
+
+  .manage-cv-table {
+    font-size: 0.75rem;
+  }
+
+  .manage-cv-loader {
+    width: 28px;
+    height: 28px;
+    border: 3px solid #e5e7eb;
+    border-top: 3px solid #2563eb;
+  }
+
+  .manage-cv-loader-text {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-cv-title,
+  .manage-cv-job-context,
+  .manage-cv-alert,
+  .manage-cv-search-row,
+  .manage-cv-table-card,
+  .manage-cv-upload-card {
+    width: 92%;
+  }
+
+  .manage-cv-title {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+  }
+
+  .manage-cv-subtitle {
+    font-size: 0.75rem;
+  }
+
+  .manage-cv-job-context {
+    gap: 5px;
+    padding: 8px;
+  }
+
+  .manage-cv-search-row {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .manage-cv-search-input,
+  .manage-cv-search-btn {
+    width: 100%;
+  }
+
+  .manage-cv-search-input {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .manage-cv-search-btn {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+
+  .manage-cv-alert {
+    padding: 8px 10px;
+    font-size: 0.7rem;
+  }
+
+  .manage-cv-table th,
+  .manage-cv-table td {
+    padding: 6px 4px;
+    font-size: 0.65rem;
+  }
+
+  .manage-cv-table th {
+    font-size: 0.6rem;
+  }
+
+  .manage-cv-btn {
+    padding: 5px 8px;
+    font-size: 0.65rem;
+  }
+
+  .manage-cv-table-card,
+  .manage-cv-upload-card {
+    padding: 10px;
+  }
+
+  .manage-cv-loader {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #e5e7eb;
+    border-top: 2px solid #2563eb;
+  }
+
+  .manage-cv-loader-text {
+    font-size: 0.7rem;
+  }
+}
+.manage-cv-loader-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 14px;
+  gap: 10px;
+}
+
+.manage-cv-loader {
+  width: 34px;
+  height: 34px;
+  border: 4px solid #e5e7eb;
+  border-top: 4px solid #2563eb;
+  border-radius: 50%;
+  animation: manageCvSpin 0.8s linear infinite;
+}
+
+.manage-cv-loader-text {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+  margin: 0;
+}
+
+@keyframes manageCvSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.disabled-upload-btn {
+  opacity: 0.7;
+  pointer-events: none;
+  cursor: not-allowed;
+}

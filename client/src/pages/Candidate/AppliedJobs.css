@@ -1,0 +1,691 @@
+.applied-jobs-container {
+  width: 90vw;
+  margin: 0 auto;
+  padding: 24px 0 32px;
+  box-sizing: border-box;
+}
+
+.applied-jobs-container h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  padding-left: 2px;
+}
+
+.applied-jobs-container > p {
+  padding-left: 2px;
+}
+
+.search-filter-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  margin: 0 0 20px 0;
+}
+
+.search-input {
+  width: 75%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.sort-select {
+  width: 25%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  appearance: none;
+  background-color: #fff;
+}
+
+.job-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin: 0;
+}
+
+.job-icon {
+  font-size: 0.95rem;
+  color: #1f2937;
+  margin-right: 5px;
+}
+
+.status-check {
+  color: #16a34a !important;
+}
+
+/* ✅ MODAL STYLES (fix "not clickable" by actually showing the modal) */
+.aj-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.aj-modal-card {
+  width: 520px;
+  max-width: 92vw;
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px 18px 16px 18px;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+  position: relative;
+}
+
+.aj-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  font-weight: 900;
+  cursor: pointer;
+  color: #6b7280;
+}
+
+.aj-modal-title {
+  margin: 0 0 6px 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+}
+
+.aj-modal-sub {
+  margin: 0 0 12px 0;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.aj-date-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.aj-date-item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.aj-modal-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aj-btn-primary {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #16a34a;
+  background: #16a34a;
+  color: #fff;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.aj-btn-secondary {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  color: #111827;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.aj-reschedule-box {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #fde68a;
+  background: #fffbeb;
+}
+
+.aj-field {
+  margin-bottom: 10px;
+}
+
+.aj-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #475569;
+  margin-bottom: 5px;
+}
+
+.aj-input {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.aj-textarea {
+  width: 100%;
+  padding: 10px 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  resize: vertical;
+}
+
+.aj-btn-warning {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #f59e0b;
+  background: #f59e0b;
+  color: #111827;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .applied-jobs-container {
+    width: 95vw;
+    padding: 16px 0 24px;
+  }
+
+  .applied-jobs-container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 6px;
+  }
+
+  .search-filter-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .search-input {
+    width: 100% !important;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .sort-select {
+    width: 100% !important;
+    padding: 8px 10px;
+    font-size: 0.8rem;
+    border-radius: 6px;
+  }
+
+  .job-card-list {
+    gap: 10px;
+  }
+
+  .job-icon {
+    font-size: 0.85rem;
+  }
+
+  .aj-modal-card {
+    width: 92vw;
+    padding: 14px 14px 12px;
+    border-radius: 12px;
+  }
+
+  .aj-modal-close {
+    font-size: 18px;
+    top: 8px;
+    right: 8px;
+  }
+
+  .aj-modal-title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .aj-modal-sub {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .aj-date-list {
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .aj-date-item {
+    padding: 8px 8px;
+    font-size: 0.75rem;
+    gap: 8px;
+  }
+
+  .aj-modal-actions {
+    gap: 8px;
+  }
+
+  .aj-btn-primary,
+  .aj-btn-secondary,
+  .aj-btn-warning {
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+  }
+
+  .aj-field {
+    margin-bottom: 8px;
+  }
+
+  .aj-label {
+    font-size: 0.7rem;
+    margin-bottom: 4px;
+  }
+
+  .aj-input,
+  .aj-textarea {
+    padding: 7px 8px;
+    font-size: 0.75rem;
+    border-radius: 6px;
+  }
+
+  .aj-reschedule-box {
+    padding: 10px;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .applied-jobs-container {
+    width: 95vw;
+    padding: 12px 0 20px;
+  }
+
+  .applied-jobs-container h2 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .applied-jobs-container > p {
+    font-size: 0.75rem;
+  }
+
+  .search-filter-row {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .search-input {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .sort-select {
+    padding: 6px 8px;
+    font-size: 0.75rem;
+  }
+
+  .job-card-list {
+    gap: 8px;
+  }
+
+  .job-icon {
+    font-size: 0.8rem;
+    margin-right: 3px;
+  }
+
+  .aj-modal-card {
+    width: 90vw;
+    padding: 12px 12px 10px;
+  }
+
+  .aj-modal-close {
+    font-size: 16px;
+  }
+
+  .aj-modal-title {
+    font-size: 13px;
+  }
+
+  .aj-modal-sub {
+    font-size: 0.7rem;
+  }
+
+  .aj-date-list {
+    gap: 6px;
+  }
+
+  .aj-date-item {
+    padding: 6px 6px;
+    font-size: 0.7rem;
+  }
+
+  .aj-btn-primary,
+  .aj-btn-secondary,
+  .aj-btn-warning {
+    padding: 6px 8px;
+    font-size: 0.7rem;
+  }
+
+  .aj-label {
+    font-size: 0.65rem;
+  }
+
+  .aj-input,
+  .aj-textarea {
+    padding: 5px 6px;
+    font-size: 0.7rem;
+  }
+}
+/* =====================================================
+   APPLIED JOBS - MOBILE RESPONSIVE FIX
+   Paste this at the END of AppliedJobs.css
+   Desktop style will stay same.
+   ===================================================== */
+
+.applied-jobs-container,
+.search-filter-row,
+.job-card-list,
+.aj-modal-card,
+.aj-reschedule-box {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .applied-jobs-container {
+    width: 94vw;
+    padding: 18px 0 28px;
+    overflow-x: hidden;
+  }
+
+  .search-filter-row {
+    flex-direction: column !important;
+    gap: 9px !important;
+  }
+
+  .search-filter-row input,
+  .search-filter-row select,
+  .search-filter-row button {
+    width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .job-card-list > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .job-card-list > div > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .job-card-list > div > button {
+    width: 100% !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .applied-jobs-container {
+    width: calc(100% - 24px);
+    padding: 14px 0 24px;
+    overflow-x: hidden;
+  }
+
+  .applied-jobs-container h2 {
+    font-size: 1.22rem;
+    line-height: 1.25;
+    margin-bottom: 6px;
+    padding-left: 0;
+  }
+
+  .applied-jobs-container > p {
+    font-size: 0.78rem !important;
+    line-height: 1.4;
+    padding-left: 0;
+  }
+
+  .applied-jobs-container > div[style] {
+    font-size: 0.76rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .search-filter-row {
+    width: 100% !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .search-filter-row input,
+  .search-filter-row select,
+  .search-filter-row button {
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .job-card-list {
+    gap: 12px !important;
+  }
+
+  .job-card-list > div {
+    width: 100% !important;
+    padding: 13px !important;
+    border-radius: 12px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    box-shadow: 0 3px 9px rgba(15, 23, 42, 0.08) !important;
+    box-sizing: border-box !important;
+  }
+
+  .job-card-list > div > div:first-child {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .job-card-list > div > div:first-child > div:first-child {
+    font-size: 0.98rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .job-card-list > div > div:first-child > div:nth-child(2) {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .job-card-list > div > div:first-child > div:nth-child(3) {
+    font-size: 0.76rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .job-card-list > div > div:first-child > div:nth-child(4) {
+    font-size: 0.76rem !important;
+    line-height: 1.45 !important;
+  }
+
+  .job-card-list > div > div:first-child > div:nth-child(4) > div:first-child {
+    flex-wrap: wrap !important;
+    white-space: normal !important;
+    gap: 7px !important;
+  }
+
+  .job-card-list span {
+    overflow-wrap: anywhere !important;
+  }
+
+  .job-icon {
+    font-size: 0.78rem;
+    margin-right: 4px;
+  }
+
+  .job-card-list > div span[style] {
+    font-size: 0.72rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .job-card-list > div div[style] {
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+  }
+
+  .job-card-list button {
+    width: 100% !important;
+    padding: 8px 10px !important;
+    font-size: 0.74rem !important;
+    border-radius: 8px !important;
+    text-align: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+    white-space: normal !important;
+  }
+
+  .job-card-list > div div[style*="background: #dff3e3"] {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+    font-size: 0.76rem !important;
+  }
+
+  .job-card-list > div > button {
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+
+  .aj-modal-overlay {
+    align-items: flex-start;
+    padding: 58px 0 24px;
+    overflow-y: auto;
+  }
+
+  .aj-modal-card {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: calc(100vh - 82px);
+    padding: 16px 14px 18px !important;
+    border-radius: 14px;
+    overflow-y: auto;
+  }
+
+  .aj-modal-close {
+    top: 9px;
+    right: 9px;
+    font-size: 18px;
+  }
+
+  .aj-modal-title {
+    font-size: 0.98rem;
+    line-height: 1.3;
+    padding-right: 26px;
+  }
+
+  .aj-modal-sub {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .aj-date-list {
+    gap: 8px;
+  }
+
+  .aj-date-item {
+    padding: 9px;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    align-items: flex-start;
+  }
+
+  .aj-date-item span {
+    overflow-wrap: anywhere;
+  }
+
+  .aj-modal-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .aj-btn-primary,
+  .aj-btn-secondary,
+  .aj-btn-warning {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.76rem;
+    border-radius: 8px;
+  }
+
+  .aj-reschedule-box {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .aj-label {
+    font-size: 0.72rem;
+  }
+
+  .aj-input,
+  .aj-textarea {
+    width: 100%;
+    padding: 8px 9px;
+    font-size: 0.76rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .aj-modal-card iframe {
+    height: 70vh !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .applied-jobs-container {
+    width: calc(100% - 18px);
+  }
+
+  .applied-jobs-container h2 {
+    font-size: 1.1rem;
+  }
+
+  .search-filter-row input,
+  .search-filter-row select,
+  .search-filter-row button {
+    font-size: 0.72rem !important;
+    padding: 7px 8px !important;
+  }
+
+  .job-card-list > div {
+    padding: 11px !important;
+  }
+
+  .job-card-list > div > div:first-child > div:first-child {
+    font-size: 0.9rem !important;
+  }
+
+  .job-card-list button {
+    font-size: 0.7rem !important;
+    padding: 7px 8px !important;
+  }
+
+  .aj-modal-card {
+    width: calc(100% - 16px) !important;
+    padding: 14px 12px 16px !important;
+  }
+}

@@ -1,0 +1,273 @@
+/* Container */
+.apps-container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.apps-heading {
+  margin-left: 5vw;
+  margin-bottom: 6px;
+}
+
+.apps-alert {
+  width: 90vw;
+  margin: 10px auto 16px auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #1b5e20;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* List wrapper */
+.apps-list {
+  width: 90vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Single application card */
+.app-card {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+/* Left side */
+.app-main {
+  flex-grow: 1;
+  max-width: 70%;
+}
+
+.app-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.app-email {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 2px;
+  margin-bottom: 6px;
+}
+
+/* Info rows */
+.app-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  font-size: 0.85rem;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+.app-row-bottom {
+  margin-top: 6px;
+}
+
+.app-row-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Icons & links */
+.app-icon {
+  font-size: 0.85rem;
+  color: #1f2937;
+  margin-right: 5px;
+}
+
+.app-icon-green {
+  color: #16a34a;
+}
+
+.app-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.app-link:hover {
+  text-decoration: underline;
+}
+
+/* Status + dates */
+.app-status {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid #cbd5f5;
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.app-status-invited {
+  background: #d1fae5;
+  border-color: #bbf7d0;
+  color: #065f46;
+}
+
+.app-status-confirmed {
+  background: #bbf7d0;
+  border-color: #22c55e;
+  color: #064e3b;
+}
+
+.app-confirmed-date {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #15803d;
+  font-weight: 600;
+}
+
+.app-applied-date {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+/* Right side button */
+.app-actions {
+  display: flex;
+  align-items: center;
+}
+
+.apps-btn-primary {
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb; /* blue background */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.apps-btn-primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.apps-btn-disabled {
+  background: #e5e7eb;
+  border-color: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.apps-empty {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Modal overlay & card */
+.apps-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 80px;
+  z-index: 60;
+}
+
+.apps-modal-card {
+  width: 420px;
+  max-width: 90vw;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
+  padding: 18px 18px 20px 18px;
+  position: relative;
+}
+
+/* Close cross */
+.apps-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.apps-modal-close:hover {
+  color: #111827;
+}
+
+.apps-modal-title {
+  margin: 0 0 6px 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.apps-modal-text {
+  margin: 0 0 12px 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Fields in modal */
+.apps-modal-field {
+  margin-bottom: 10px;
+}
+
+.apps-modal-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.apps-modal-input {
+  width: 100%;
+  padding: 8px 9px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+}
+
+/* Modal button */
+.apps-modal-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.apps-modal-btn-primary {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #0ea5e9;
+  background: #0ea5e9;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.apps-modal-btn-primary:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+}

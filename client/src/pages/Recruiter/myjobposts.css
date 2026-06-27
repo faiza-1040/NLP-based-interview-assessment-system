@@ -1,0 +1,1229 @@
+/* client/src/pages/Recruiter/myjobposts.css */
+
+.myjobs-container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.myjobs-container h2 {
+  margin-left: 5vw;
+  margin-bottom: 5px;
+}
+
+.myjobs-subtext {
+  margin-left: 5vw;
+  margin-bottom: 15px;
+  color: #64748b;
+}
+
+/* Search & filter row – 90% width => 5% gap each side */
+.myjobs-search-row {
+  display: flex;
+  gap: 10px;
+  width: 90vw;
+  margin: 0 auto 20px auto;
+}
+
+.myjobs-search-input {
+  flex-grow: 3;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.myjobs-sort-select {
+  width: 15%;
+  min-width: 120px;
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background-color: #fff;
+}
+
+.myjobs-clear-btn {
+  width: 25%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Cards wrapper – 90vw so cards line up with search row */
+.myjobs-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 90vw;
+  margin: 0 auto;
+}
+
+/* Single job card */
+.myjobs-card {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12); /* darker shadow */
+}
+
+/* Left section */
+.myjobs-card-main {
+  flex-grow: 1;
+  max-width: 70%;
+}
+
+.myjobs-title {
+  font-weight: 800;
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.myjobs-company {
+  color: #64748b;
+  margin-top: 2px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+/* Meta row: location, salary, deadline (smaller font) */
+.myjobs-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  white-space: nowrap;
+  font-size: 0.85rem; /* smaller */
+  color: #374151;
+  line-height: 1.4;
+  margin-top: 4px;
+  margin-bottom: 8px; /* small gap below meta block */
+}
+
+.myjobs-meta-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.myjobs-icon {
+  font-size: 0.95rem;
+  color: #1f2937; /* same color as text */
+  margin-right: 5px;
+}
+
+/* Status + posted BLOCK under meta */
+.myjobs-bottom-wrap {
+  margin-top: 2px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* little extra gap between status and posted */
+  align-items: flex-start;
+}
+
+/* Status pill */
+.myjobs-status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  border: 1px solid transparent;
+}
+
+.myjobs-status-open {
+  background: #eaf5ff;
+  color: #0b66c3;
+  border-color: #c6e2ff;
+}
+
+.myjobs-status-closed {
+  background: #ffe4e8;
+  color: #c2273d;
+  border-color: #ffd0d6;
+}
+
+/* Posted line */
+.myjobs-posted {
+  font-size: 0.85rem; /* smaller font */
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Right section: action buttons */
+.myjobs-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.myjobs-btn-primary {
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb; /* blue background */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.85rem; /* smaller font size */
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.myjobs-btn-primary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.myjobs-btn-secondary {
+  /* same style, ready for tweak later */
+}
+
+/* Empty state */
+.myjobs-empty {
+  margin-top: 10px;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* DETAIL CARD MODAL STYLES */
+.jobdetail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5); /* dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 0 40px 0;   /* gap from navbar + bottom padding */
+  z-index: 50;
+  overflow-y: auto;          /* <<< ALLOW SCROLL WHEN CONTENT IS TALL */
+}
+
+.jobdetail-card {
+  width: 90vw;              /* same feel as list cards */
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 18px;      /* bit round */
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  padding: 22px 24px 24px 24px;
+  position: relative;
+  color: #1f2937;           /* soft black */
+
+  /* IMPORTANT: let card scroll inside viewport */
+  max-height: calc(100vh - 140px);  /* viewport height minus top/bottom gap */
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Close (X) */
+.jobdetail-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.jobdetail-close:hover {
+  color: #111827;
+}
+
+.jobdetail-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.jobdetail-company {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 12px;
+}
+
+/* Meta rows inside detail card */
+.jobdetail-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 14px;
+  row-gap: 6px;               /* vertical breathing space */
+  font-size: 0.9rem;
+  color: #374151;
+  margin-bottom: 10px;        /* decent gap below row */
+}
+
+.jobdetail-meta-row--second {
+  margin-top: 8px;            /* space between first & second row */
+  margin-bottom: 12px;        /* space before posted / next block */
+}
+
+.jobdetail-meta-item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.jobdetail-icon {
+  font-size: 0.9rem;
+  color: #1f2937;
+  margin-right: 6px;
+}
+
+/* Status badge inside detail card */
+.jobdetail-status {
+  padding: 3px 9px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.jobdetail-status-open {
+  background: #eaf5ff;
+  color: #0b66c3;
+  border-color: #c6e2ff;
+}
+
+.jobdetail-status-closed {
+  background: #ffe4e8;
+  color: #c2273d;
+  border-color: #ffd0d6;
+}
+
+/* Posted line inside detail */
+.jobdetail-posted {
+  font-size: 0.85rem;
+  color: #94a3b8;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 4px;
+}
+
+/* Sections: Description, Skills */
+.jobdetail-section {
+  margin-top: 18px;
+}
+
+.jobdetail-section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.jobdetail-desc {
+  background: #ffffff; /* white background for description */
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  color: #1f2937; /* not too much black, but readable */
+
+  /* REMOVE height limit so full text fits inside scrollable card */
+  max-height: none;
+  overflow-y: visible;
+}
+
+/* Skills pills */
+.jobdetail-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jobdetail-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e5f0ff;
+  color: #1d4ed8;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Bottom actions: Edit (blue), Delete (red) */
+.jobdetail-actions {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.jobdetail-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.jobdetail-btn-edit {
+  background: #2563eb;
+  border-color: #2563eb;
+  color: #ffffff;
+}
+
+.jobdetail-btn-edit:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.jobdetail-btn-delete {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.jobdetail-btn-delete:hover {
+  background: #fecaca;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+  .myjobs-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .myjobs-card-main {
+    max-width: 100%;
+  }
+
+  .myjobs-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .myjobs-sort-select,
+  .myjobs-clear-btn {
+    width: auto;
+  }
+
+  .jobdetail-card {
+    width: 92vw;
+    padding: 18px 16px 20px 16px;
+    max-height: calc(100vh - 120px);
+  }
+}
+
+/* ===== INTERVIEW DETAILS MODAL ===== */
+.interviewdetail-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 70px 0 35px 0;
+  z-index: 80;
+  overflow-y: auto;
+}
+
+.interviewdetail-card {
+  width: 85vw;
+  max-width: 1280px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  padding: 22px 24px 24px 24px;
+  position: relative;
+  color: #1f2937;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.interviewdetail-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6b7280;
+}
+
+.interviewdetail-close:hover {
+  color: #111827;
+}
+
+.interviewdetail-title {
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0 0 4px 0;
+  color: #1f2937;
+}
+
+.interviewdetail-company {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 14px;
+}
+
+.interviewdetail-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.interviewdetail-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  font-size: 0.85rem;
+}
+
+.interviewdetail-table thead tr {
+  background: #f9fafb;
+}
+
+.interviewdetail-table th,
+.interviewdetail-table td {
+  padding: 9px 10px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+  white-space: nowrap;
+}
+
+.interviewdetail-table th {
+  font-weight: 700;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.interviewdetail-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.interviewdetail-linkbtn {
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.interviewdetail-linkbtn:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+.interviewdetail-linkbtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.interviewdetail-empty {
+  text-align: center;
+  color: #64748b;
+  padding: 18px !important;
+}
+
+.interviewdetail-risk {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.interviewdetail-risk-low {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.interviewdetail-risk-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.interviewdetail-risk-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.interviewdetail-small-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 90px 0 40px 0;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.interviewdetail-small-card {
+  width: 70vw;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+  padding: 22px 24px 24px 24px;
+  position: relative;
+  color: #1f2937;
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.interviewdetail-camera-card {
+  max-width: 620px;
+}
+
+.interviewdetail-summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.interviewdetail-summary-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.interviewdetail-summary-q {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+
+.interviewdetail-summary-a {
+  font-size: 0.85rem;
+  color: #374151;
+  line-height: 1.5;
+  margin-top: 6px;
+}
+
+.interviewdetail-summary-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.interviewdetail-summary-meta span {
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: #eaf5ff;
+  color: #0b66c3;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.interviewdetail-camera-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+.interviewdetail-camera-grid div {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px;
+  background: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .interviewdetail-card,
+  .interviewdetail-small-card {
+    width: 94vw;
+  }
+
+  .interviewdetail-camera-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*=========================================  Adding for decision styling======================*/
+.interviewdetail-decision {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.interviewdetail-decision.pending {
+  background: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #d1d5db;
+}
+
+.interviewdetail-decision.shortlisted {
+  background: #dbeafe;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+
+.interviewdetail-decision.rejected {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.interviewdetail-decision.hired {
+  background: #d1fae5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+
+.interviewdetail-decision-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.interviewdetail-decision-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.interviewdetail-decision-btn.shortlist {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.interviewdetail-decision-btn.shortlist:hover {
+  background: #1d4ed8;
+}
+
+.interviewdetail-decision-btn.reject {
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.interviewdetail-decision-btn.reject:hover {
+  background: #fecaca;
+}
+
+.interviewdetail-top-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  font-size: 0.88rem;
+}
+/* =====================================================
+   MY JOB POSTS - MOBILE RESPONSIVE FIX
+   Paste this at the END of myjobposts.css
+   This will not disturb desktop design.
+   ===================================================== */
+
+/* Safe box sizing for responsive layout */
+.myjobs-container,
+.myjobs-search-row,
+.myjobs-card-list,
+.myjobs-card,
+.myjobs-card-main,
+.myjobs-actions,
+.jobdetail-card,
+.interviewdetail-card,
+.interviewdetail-small-card,
+.interviewdetail-table-wrap {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Tablet adjustment */
+@media (max-width: 900px) {
+  .myjobs-container {
+    width: 100%;
+    padding: 18px 0 28px 0;
+    overflow-x: hidden;
+  }
+
+  .myjobs-container h2 {
+    margin-left: 4vw;
+    font-size: 1.45rem;
+  }
+
+  .myjobs-subtext {
+    margin-left: 4vw;
+    font-size: 0.9rem;
+  }
+
+  .myjobs-search-row {
+    width: 92vw;
+    gap: 8px;
+  }
+
+  .myjobs-card-list {
+    width: 92vw;
+    gap: 13px;
+  }
+
+  .myjobs-card {
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .myjobs-card-main {
+    max-width: 100%;
+  }
+
+  .myjobs-actions {
+    align-items: flex-start;
+  }
+
+  .interviewdetail-card {
+    width: 92vw;
+  }
+
+  .interviewdetail-small-card {
+    width: 86vw;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .myjobs-container {
+    width: 100%;
+    padding: 16px 0 24px 0;
+    overflow-x: hidden;
+  }
+
+  .myjobs-container h2 {
+    margin-left: 16px;
+    margin-bottom: 4px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  .myjobs-subtext {
+    margin-left: 16px;
+    margin-bottom: 14px;
+    font-size: 0.82rem;
+    line-height: 1.4;
+  }
+
+  /* Search row becomes stacked */
+  .myjobs-search-row {
+    width: calc(100% - 28px);
+    margin: 0 auto 16px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .myjobs-search-input,
+  .myjobs-sort-select,
+  .myjobs-clear-btn {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.82rem;
+    padding: 8px 10px;
+    border-radius: 8px;
+  }
+
+  .myjobs-clear-btn {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+  }
+
+  /* Job cards */
+  .myjobs-card-list {
+    width: calc(100% - 28px);
+    gap: 12px;
+  }
+
+  .myjobs-card {
+    width: 100%;
+    padding: 13px;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    box-shadow: 0 3px 9px rgba(0, 0, 0, 0.1);
+  }
+
+  .myjobs-card-main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .myjobs-title {
+    font-size: 0.98rem;
+    line-height: 1.3;
+  }
+
+  .myjobs-company {
+    font-size: 0.78rem;
+    margin-bottom: 6px;
+  }
+
+  .myjobs-meta-row {
+    gap: 7px;
+    font-size: 0.75rem;
+    line-height: 1.45;
+    white-space: normal;
+    margin-bottom: 7px;
+  }
+
+  .myjobs-meta-item {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .myjobs-icon {
+    font-size: 0.78rem;
+    margin-right: 4px;
+  }
+
+  .myjobs-bottom-wrap {
+    gap: 5px;
+  }
+
+  .myjobs-status {
+    padding: 3px 8px;
+    font-size: 0.7rem;
+  }
+
+  .myjobs-posted {
+    font-size: 0.74rem;
+  }
+
+  /* Buttons become mobile-friendly */
+  .myjobs-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 7px;
+    align-items: stretch;
+  }
+
+  .myjobs-btn-primary {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+
+  .myjobs-empty {
+    font-size: 0.82rem;
+    padding: 8px 0;
+  }
+
+  /* Job detail modal */
+  .jobdetail-overlay {
+    padding: 58px 0 24px 0;
+    align-items: flex-start;
+  }
+
+  .jobdetail-card {
+    width: calc(100% - 24px);
+    max-width: 100%;
+    max-height: calc(100vh - 86px);
+    padding: 16px 14px 18px 14px;
+    border-radius: 14px;
+  }
+
+  .jobdetail-close {
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+  }
+
+  .jobdetail-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    padding-right: 26px;
+  }
+
+  .jobdetail-company {
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+  }
+
+  .jobdetail-meta-row {
+    column-gap: 9px;
+    row-gap: 6px;
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .jobdetail-meta-item {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .jobdetail-icon {
+    font-size: 0.75rem;
+    margin-right: 5px;
+  }
+
+  .jobdetail-status {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+
+  .jobdetail-posted {
+    font-size: 0.74rem;
+  }
+
+  .jobdetail-section {
+    margin-top: 14px;
+  }
+
+  .jobdetail-section-title {
+    font-size: 0.86rem;
+    margin-bottom: 5px;
+  }
+
+  .jobdetail-desc {
+    padding: 9px 10px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .jobdetail-skills {
+    gap: 6px;
+  }
+
+  .jobdetail-skill-pill {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+
+  .jobdetail-actions {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .jobdetail-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+  }
+
+  /* Interview detail modal */
+  .interviewdetail-overlay {
+    padding: 54px 0 24px 0;
+  }
+
+  .interviewdetail-card {
+    width: calc(100% - 20px);
+    max-width: 100%;
+    max-height: calc(100vh - 78px);
+    padding: 16px 12px 16px 12px;
+    border-radius: 14px;
+  }
+
+  .interviewdetail-title {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    padding-right: 26px;
+  }
+
+  .interviewdetail-company {
+    font-size: 0.78rem;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  .interviewdetail-close {
+    top: 10px;
+    right: 10px;
+    font-size: 0.9rem;
+  }
+
+  .interviewdetail-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 10px;
+  }
+
+  .interviewdetail-table {
+    min-width: 850px;
+    font-size: 0.74rem;
+  }
+
+  .interviewdetail-table th,
+  .interviewdetail-table td {
+    padding: 7px 8px;
+  }
+
+  .interviewdetail-table th {
+    font-size: 0.74rem;
+  }
+
+  .interviewdetail-linkbtn {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+  }
+
+  .interviewdetail-risk,
+  .interviewdetail-decision {
+    font-size: 0.68rem;
+    padding: 3px 7px;
+  }
+
+  .interviewdetail-decision-actions {
+    gap: 6px;
+  }
+
+  .interviewdetail-decision-btn {
+    font-size: 0.68rem;
+    padding: 6px 9px;
+  }
+
+  /* Interview summary and camera small cards */
+  .interviewdetail-small-overlay {
+    padding: 58px 0 24px 0;
+  }
+
+  .interviewdetail-small-card {
+    width: calc(100% - 24px);
+    max-width: 100%;
+    max-height: calc(100vh - 86px);
+    padding: 16px 14px 18px 14px;
+    border-radius: 14px;
+  }
+
+  .interviewdetail-top-summary {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    margin: 12px 0;
+    padding: 10px;
+    font-size: 0.76rem;
+  }
+
+  .interviewdetail-summary-list {
+    gap: 10px;
+  }
+
+  .interviewdetail-summary-item {
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .interviewdetail-summary-q {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .interviewdetail-summary-a {
+    font-size: 0.74rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .interviewdetail-summary-meta {
+    gap: 6px;
+  }
+
+  .interviewdetail-summary-meta span {
+    font-size: 0.68rem;
+    padding: 3px 7px;
+  }
+
+  .interviewdetail-camera-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    font-size: 0.76rem;
+  }
+
+  .interviewdetail-camera-grid div {
+    padding: 9px;
+    border-radius: 9px;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 380px) {
+  .myjobs-container h2 {
+    font-size: 1.15rem;
+  }
+
+  .myjobs-subtext {
+    font-size: 0.78rem;
+  }
+
+  .myjobs-search-row,
+  .myjobs-card-list {
+    width: calc(100% - 20px);
+  }
+
+  .myjobs-card {
+    padding: 11px;
+  }
+
+  .myjobs-title {
+    font-size: 0.92rem;
+  }
+
+  .myjobs-meta-row {
+    font-size: 0.7rem;
+  }
+
+  .myjobs-btn-primary {
+    font-size: 0.72rem;
+    padding: 7px 8px;
+  }
+
+  .jobdetail-card,
+  .interviewdetail-small-card {
+    width: calc(100% - 16px);
+    padding: 14px 12px 16px 12px;
+  }
+
+  .interviewdetail-card {
+    width: calc(100% - 14px);
+    padding: 14px 10px;
+  }
+
+  .interviewdetail-table {
+    min-width: 780px;
+  }
+}

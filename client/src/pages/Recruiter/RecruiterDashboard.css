@@ -1,0 +1,361 @@
+.rd-container {
+  width: 90vw;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0 32px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: #0f172a;
+}
+
+/* Header */
+.rd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 18px;
+}
+
+.rd-title {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.rd-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+/* Stats grid */
+.rd-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.rd-stat-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px 10px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+}
+
+.rd-stat-label {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rd-stat-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 2px;
+}
+
+.rd-stat-foot {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* Charts layout */
+.rd-charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.rd-bottom-grid {
+  margin-top: 14px;
+}
+
+/* Cards */
+.rd-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px 14px 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
+  display: flex;
+  flex-direction: column;
+}
+
+.rd-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.rd-card-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.rd-card-subtitle {
+  margin: 2px 0 0 0;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* Chart wrapper */
+.rd-chart-card {
+  min-height: 220px;
+}
+
+.rd-chart-wrapper {
+  flex: 1;
+  min-height: 190px;
+}
+
+.rd-chart-wrapper-small {
+  min-height: 210px;
+}
+
+/* AI-style section (if re-used later) */
+.rd-ai-card {
+  min-height: 220px;
+}
+
+.rd-ai-metrics {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rd-ai-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  color: #0f172a;
+}
+
+.rd-ai-label {
+  color: #6b7280;
+}
+
+.rd-ai-value {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Progress blocks */
+.rd-ai-progress-block {
+  margin-top: 8px;
+}
+
+.rd-ai-progress-label {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+.rd-ai-progress-bar {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.rd-ai-progress-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: #22c55e;
+}
+
+.rd-ai-progress-fill-secondary {
+  background: #2563eb;
+}
+
+.rd-ai-progress-caption {
+  margin-top: 3px;
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+/* Code-like text in subtitle */
+.rd-card-subtitle code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  background: #f3f4f6;
+  border-radius: 4px;
+  padding: 1px 4px;
+  font-size: 0.7rem;
+}
+/* =========================
+   MOBILE RESPONSIVE FIX
+   Paste this at the END of RecruiterDashboard.css
+   ========================= */
+
+/* Prevent horizontal page overflow */
+.rd-container,
+.rd-header,
+.rd-stats-grid,
+.rd-charts-grid,
+.rd-card,
+.rd-stat-card,
+.rd-chart-wrapper {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Tablet view */
+@media (max-width: 1024px) {
+  .rd-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px 18px 32px 18px;
+  }
+
+  .rd-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rd-charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 600px) {
+  .rd-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 16px 14px 28px 14px;
+    overflow-x: hidden;
+  }
+
+  .rd-header {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .rd-title {
+    font-size: 1.35rem;
+    line-height: 1.25;
+  }
+
+  .rd-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-top: 6px;
+  }
+
+  .rd-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .rd-stat-card {
+    width: 100%;
+    padding: 14px 16px 12px;
+    border-radius: 12px;
+  }
+
+  .rd-stat-label {
+    font-size: 0.72rem;
+  }
+
+  .rd-stat-value {
+    font-size: 1.35rem;
+  }
+
+  .rd-stat-foot {
+    font-size: 0.76rem;
+  }
+
+  .rd-charts-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-top: 0;
+  }
+
+  .rd-bottom-grid {
+    margin-top: 14px;
+  }
+
+  .rd-card {
+    width: 100%;
+    padding: 14px 14px 16px;
+    border-radius: 12px;
+  }
+
+  .rd-card-header {
+    align-items: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .rd-card-title {
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+
+  .rd-card-subtitle {
+    font-size: 0.76rem;
+    line-height: 1.4;
+  }
+
+  .rd-chart-card {
+    min-height: auto;
+  }
+
+  .rd-chart-wrapper {
+    width: 100%;
+    min-height: 250px;
+    height: 250px;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .rd-chart-wrapper-small {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .rd-chart-wrapper canvas {
+    max-width: 100% !important;
+  }
+
+  .rd-card-subtitle code {
+    font-size: 0.68rem;
+  }
+}
+
+/* Very small mobile screens */
+@media (max-width: 380px) {
+  .rd-container {
+    padding: 14px 10px 24px 10px;
+  }
+
+  .rd-title {
+    font-size: 1.25rem;
+  }
+
+  .rd-stat-card,
+  .rd-card {
+    padding: 12px;
+  }
+
+  .rd-chart-wrapper {
+    height: 235px;
+    min-height: 235px;
+  }
+
+  .rd-chart-wrapper-small {
+    height: 250px;
+    min-height: 250px;
+  }
+}

@@ -1,0 +1,779 @@
+/* Page container */
+.vac-container {
+  width: 100vw;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.vac-heading {
+  margin-left: 5vw;
+  margin-bottom: 6px;
+}
+
+/* Alert */
+.vac-alert {
+  width: 90vw;               /* 90% width => 5% margin each side */
+  margin: 10px auto 16px auto;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #e8f5e9;
+  border: 1px solid #a5d6a7;
+  color: #1b5e20;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+/* Filter row */
+.vac-filter-row {
+  width: 90vw;               /* match table width */
+  margin: 12px auto 16px auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+}
+
+.vac-filter-label {
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.vac-filter-select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+  min-width: 200px;
+  background: #ffffff;
+}
+
+.vac-filter-count {
+  margin-left: auto;
+  color: #64748b;
+}
+
+/* Table wrapper & table */
+.vac-table-wrap {
+  width: 90vw;                /* 90% width => 5% gap each side */
+  margin: 0 auto 24px auto;
+  overflow-x: auto;
+}
+
+.vac-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;  /* border around table */
+  font-size: 0.85rem;         /* smaller font inside table */
+}
+
+.vac-table thead tr {
+  background: #f9fafb;
+}
+
+.vac-table th,
+.vac-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.vac-table th {
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.85rem;
+}
+
+.vac-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Links inside table */
+.vac-link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.vac-link:hover {
+  text-decoration: underline;
+}
+
+/* Status text + confirmed date */
+.vac-status-text {
+  display: inline-block;
+  color: #111827;
+}
+
+.vac-confirmed-inline {
+  margin-top: 3px;
+  font-size: 0.8rem;
+  color: #15803d;
+  font-weight: 600;
+}
+
+/* Main Call for Interview button */
+.vac-btn-primary {
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb;       /* blue background */
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.vac-btn-primary:hover:not(:disabled) {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Invited state: light green button */
+.vac-btn-invited {
+  background: #d1fae5;
+  border-color: #bbf7d0;
+  color: #065f46;
+  cursor: not-allowed;
+}
+
+/* Confirmed state: stronger green / disabled */
+.vac-btn-confirmed {
+  background: #bbf7d0;
+  border-color: #22c55e;
+  color: #065f46;
+  cursor: not-allowed;
+}
+
+/* Secondary button ("View (2)") – blue */
+.vac-btn-secondary {
+  padding: 5px 9px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+  white-space: nowrap;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.vac-btn-secondary:hover {
+  background: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Empty state row */
+.vac-empty {
+  text-align: center;
+  padding: 12px 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+/* ===== INVITE MODAL ===== */
+.vac-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.vac-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 22px 22px 20px 22px;
+  width: 420px;
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.vac-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.vac-modal-close:hover {
+  color: #111827;
+}
+
+.vac-modal-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.vac-modal-text {
+  color: #64748b;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+}
+
+.vac-modal-field {
+  margin-bottom: 10px;
+}
+
+.vac-modal-label {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.vac-modal-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.85rem;
+}
+
+.vac-modal-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;   /* center the button */
+}
+
+.vac-modal-primary-btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid #0ea5e9;
+  background: #0ea5e9;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.vac-modal-primary-btn:hover {
+  background: #0284c7;
+  border-color: #0284c7;
+}
+
+/* ===== SCREENING ANSWERS MODAL ===== */
+.vac-answers-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 60;
+}
+
+.vac-answers-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 25px 24px 20px 24px;
+  width: 550px;
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+/* Cross (X) button in top-right */
+.vac-answers-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #6b7280;
+  line-height: 1;
+}
+
+.vac-answers-close:hover {
+  color: #111827;
+}
+/* =====================================================
+   APPLIED CANDIDATES - MOBILE RESPONSIVE FIX
+   Paste this at the END of ViewAppliedCandidates.css
+   Desktop style will stay same.
+   ===================================================== */
+
+/* Safe responsive box sizing */
+.vac-container,
+.vac-alert,
+.vac-filter-row,
+.vac-table-wrap,
+.vac-table,
+.vac-modal-card,
+.vac-answers-card {
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .vac-container {
+    width: 100%;
+    padding: 18px 0 28px 0;
+    overflow-x: hidden;
+  }
+
+  .vac-heading {
+    margin-left: 4vw;
+    font-size: 1.45rem;
+  }
+
+  .vac-alert,
+  .vac-filter-row,
+  .vac-table-wrap {
+    width: 92vw;
+  }
+
+  .vac-table {
+    min-width: 950px;
+  }
+
+  .vac-modal-card {
+    max-width: 92vw;
+  }
+
+  .vac-answers-card {
+    max-width: 92vw;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .vac-container {
+    width: 100%;
+    padding: 16px 0 24px 0;
+    overflow-x: hidden;
+  }
+
+  .vac-heading {
+    margin-left: 16px;
+    margin-bottom: 8px;
+    font-size: 1.25rem;
+    line-height: 1.25;
+  }
+
+  /* Alert message */
+  .vac-alert {
+    width: calc(100% - 28px);
+    margin: 10px auto 14px auto;
+    padding: 9px 10px;
+    font-size: 0.78rem;
+    line-height: 1.4;
+    border-radius: 8px;
+  }
+
+  /* Filter row stack on mobile */
+  .vac-filter-row {
+    width: calc(100% - 28px);
+    margin: 12px auto 14px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    font-size: 0.78rem;
+  }
+
+  .vac-filter-label {
+    font-size: 0.78rem;
+    white-space: normal;
+  }
+
+  .vac-filter-select {
+    width: 100%;
+    min-width: 0;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+
+  .vac-filter-count {
+    margin-left: 0;
+    font-size: 0.76rem;
+  }
+
+  /* Table should scroll inside wrapper, not full page */
+  .vac-table-wrap {
+    width: calc(100% - 28px);
+    margin: 0 auto 20px auto;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+  }
+
+  .vac-table {
+    min-width: 920px;
+    width: 920px;
+    font-size: 0.74rem;
+    border: none;
+  }
+
+  .vac-table th,
+  .vac-table td {
+    padding: 7px 8px;
+    white-space: nowrap;
+  }
+
+  .vac-table th {
+    font-size: 0.74rem;
+  }
+
+  .vac-status-text {
+    font-size: 0.74rem;
+  }
+
+  .vac-confirmed-inline {
+    font-size: 0.7rem;
+    white-space: normal;
+    max-width: 180px;
+    line-height: 1.35;
+  }
+
+  .vac-link {
+    font-size: 0.74rem;
+  }
+
+  .vac-btn-primary,
+  .vac-btn-secondary {
+    padding: 5px 8px;
+    font-size: 0.7rem;
+    border-radius: 7px;
+  }
+
+  .vac-empty {
+    font-size: 0.78rem;
+    padding: 10px 0;
+  }
+
+  /* Invite / Reschedule / Resume modal */
+  .vac-modal-overlay {
+    align-items: flex-start;
+    padding: 58px 0 24px 0;
+    overflow-y: auto;
+  }
+
+  .vac-modal-card {
+    width: calc(100% - 24px) !important;
+    max-width: 100% !important;
+    max-height: calc(100vh - 82px);
+    height: auto !important;
+    padding: 16px 14px 18px 14px;
+    border-radius: 14px;
+    overflow-y: auto;
+  }
+
+  .vac-modal-close {
+    top: 9px;
+    right: 9px;
+    font-size: 1rem;
+  }
+
+  .vac-modal-title {
+    font-size: 0.95rem;
+    line-height: 1.3;
+    padding-right: 28px;
+  }
+
+  .vac-modal-text {
+    font-size: 0.78rem;
+    line-height: 1.45;
+  }
+
+  .vac-modal-label {
+    font-size: 0.72rem;
+  }
+
+  .vac-modal-input {
+    padding: 8px 9px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+
+  .vac-modal-actions {
+    width: 100%;
+    display: grid !important;
+    grid-template-columns: 1fr;
+    gap: 8px !important;
+  }
+
+  .vac-modal-primary-btn {
+    width: 100%;
+    padding: 8px 10px;
+    font-size: 0.78rem;
+    border-radius: 8px;
+  }
+
+  /* Resume iframe modal mobile height */
+  .vac-modal-card iframe {
+    height: 70vh !important;
+  }
+
+  /* Screening answers modal */
+  .vac-answers-overlay {
+    align-items: flex-start;
+    padding: 58px 0 24px 0;
+    overflow-y: auto;
+  }
+
+  .vac-answers-card {
+    width: calc(100% - 24px);
+    max-width: 100%;
+    max-height: calc(100vh - 82px);
+    padding: 16px 14px 18px 14px;
+    border-radius: 14px;
+    overflow-y: auto;
+  }
+
+  .vac-answers-close {
+    top: 9px;
+    right: 9px;
+    font-size: 1rem;
+  }
+
+  .vac-answers-card h3 {
+    font-size: 0.95rem !important;
+    line-height: 1.3;
+    padding-right: 28px;
+  }
+
+  .vac-answers-card p {
+    font-size: 0.76rem !important;
+    line-height: 1.45;
+  }
+}
+
+/* Very small mobile */
+@media (max-width: 380px) {
+  .vac-heading {
+    font-size: 1.15rem;
+  }
+
+  .vac-alert,
+  .vac-filter-row,
+  .vac-table-wrap {
+    width: calc(100% - 20px);
+  }
+
+  .vac-table {
+    min-width: 860px;
+    width: 860px;
+    font-size: 0.7rem;
+  }
+
+  .vac-table th,
+  .vac-table td {
+    padding: 6px 7px;
+  }
+
+  .vac-btn-primary,
+  .vac-btn-secondary {
+    font-size: 0.66rem;
+    padding: 5px 7px;
+  }
+
+  .vac-modal-card,
+  .vac-answers-card {
+    width: calc(100% - 16px) !important;
+    padding: 14px 12px 16px 12px;
+  }
+}
+/* =====================================================
+   APPLIED CANDIDATES - TRUE MOBILE CARD VIEW
+   Paste at the END of ViewAppliedCandidates.css
+   ===================================================== */
+
+/* Hidden on desktop */
+.vac-mobile-card-list {
+  display: none;
+}
+
+/* Mobile card layout */
+@media (max-width: 600px) {
+  /* Hide wide table on mobile */
+  .vac-table-wrap {
+    display: none;
+  }
+
+  /* Show mobile cards */
+  .vac-mobile-card-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: calc(100% - 28px);
+    margin: 0 auto 22px auto;
+  }
+
+  .vac-mobile-card {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 13px;
+    box-shadow: 0 3px 9px rgba(15, 23, 42, 0.08);
+    box-sizing: border-box;
+  }
+
+  .vac-mobile-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .vac-mobile-job-title {
+    margin: 0;
+    font-size: 0.98rem;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1.3;
+  }
+
+  .vac-mobile-candidate {
+    margin: 3px 0 0 0;
+    font-size: 0.8rem;
+    color: #64748b;
+    line-height: 1.4;
+  }
+
+  .vac-mobile-score {
+    flex-shrink: 0;
+    background: #eaf5ff;
+    color: #0b66c3;
+    border: 1px solid #c6e2ff;
+    border-radius: 999px;
+    padding: 4px 8px;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .vac-mobile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 8px;
+  }
+
+  .vac-mobile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    color: #64748b;
+  }
+
+  .vac-mobile-row span {
+    flex-shrink: 0;
+    color: #64748b;
+    font-weight: 500;
+  }
+
+  .vac-mobile-row strong {
+    color: #111827;
+    font-weight: 600;
+    text-align: right;
+    overflow-wrap: anywhere;
+  }
+
+  .vac-mobile-note {
+    margin-top: 2px;
+    padding: 7px 9px;
+    border-radius: 9px;
+    background: #ecfdf5;
+    color: #15803d;
+    font-size: 0.72rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  .vac-mobile-note-warning {
+    background: #fffbeb;
+    color: #b45309;
+  }
+
+  .vac-mobile-note-danger {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+
+  .vac-mobile-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .vac-mobile-actions .vac-btn-primary,
+  .vac-mobile-actions .vac-btn-secondary,
+  .vac-mobile-outline-btn {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 8px 10px;
+    font-size: 0.75rem;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+
+  .vac-mobile-outline-btn {
+    border: 1px solid #2563eb;
+    background: #ffffff;
+    color: #2563eb;
+    font-weight: 600;
+    cursor: pointer;
+  }
+
+  .vac-mobile-outline-btn:hover {
+    background: #eff6ff;
+  }
+
+  .vac-mobile-warning-btn {
+    background: #f59e0b !important;
+    border-color: #f59e0b !important;
+    color: #ffffff !important;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 380px) {
+  .vac-mobile-card-list {
+    width: calc(100% - 20px);
+  }
+
+  .vac-mobile-card {
+    padding: 11px;
+  }
+
+  .vac-mobile-job-title {
+    font-size: 0.9rem;
+  }
+
+  .vac-mobile-row {
+    font-size: 0.7rem;
+  }
+
+  .vac-mobile-actions .vac-btn-primary,
+  .vac-mobile-actions .vac-btn-secondary,
+  .vac-mobile-outline-btn {
+    font-size: 0.7rem;
+    padding: 7px 8px;
+  }
+}

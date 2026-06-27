@@ -1,0 +1,190 @@
+/* src/index.css */
+
+/* Viewport Settings */
+html {
+  width: 100%;
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+/* 1. Global full-page white background */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff; /* full page white background */
+  overflow-x: hidden;        /* <-- prevent any stray horizontal scroll */
+}
+
+/* 2. Root variables + typography (no dark background here) */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* REMOVE dark mode background + color-scheme that caused black areas */
+  /* color-scheme: light dark; */
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Brand Color */
+  --brand-dark-blue: #1e3a8a;  /* dark blue */
+}
+
+/* Add Google Fonts to body */
+body {
+  font-family: 'Open Sans', sans-serif;  /* Default font for body */
+  background-color: #ffffff;             /* keep it white all over */
+  color: #374151;
+  line-height: 1.6;
+  min-width: 320px;
+  min-height: 100vh;
+  display: block;                        /* don’t center every page */
+}
+
+/* Let pages control alignment */
+#root {
+  text-align: left;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;  /* Use Montserrat for all headings */
+}
+
+/* Responsive Headings */
+h1 {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+h2 {
+  font-size: clamp(1.25rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1rem, 3vw, 1.5rem);
+}
+
+h4, h5, h6 {
+  font-size: clamp(0.875rem, 2.5vw, 1.25rem);
+}
+
+/* Buttons */
+button {
+  font-family: 'Poppins', sans-serif;  /* Use Poppins for buttons */
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Text Links */
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+/* Form Controls */
+input, select, textarea {
+  font-family: 'Inter', sans-serif;  /* Use Inter for form inputs */
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #cbd5e1;
+}
+
+::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+/* Label Styling */
+label {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--brand-dark-blue);
+  font-weight: 600;
+}
+
+/* Select text and options color */
+select, option, optgroup {
+  font-family: 'Inter', sans-serif;
+  color: var(--brand-dark-blue);
+}
+
+/* Focus Ring */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand-dark-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+/* Light Mode (keep it light, no dark background) */
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+/* Re-ensure form styling (safe duplicates) */
+input, select, textarea {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #cbd5e1;
+}
+
+::placeholder { 
+  color: #6b7280; 
+  opacity: 1; 
+}
+
+/* Make labels dark blue (main field headings) */
+label {
+  color: var(--brand-dark-blue);
+  font-weight: 600;
+}
+
+/* Make select text/options dark blue to match labels */
+select, option, optgroup {
+  color: var(--brand-dark-blue);
+}
+
+/* Nicer focus ring in dark blue for all form controls */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--brand-dark-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}

@@ -1,0 +1,43 @@
+How to run FYP Project
+
+Go to nlp-service directory run
+Remove-Item -Recurse -Force venv
+python -m venv venv
+ Run to Activate it :
+venv\Scripts\activate
+Then run to install plugs
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+// pip install -r requirements.txt
+
+uvicorn main:app --host 127.0.0.1 --port 8000 --reload
+on different terminals
+
+
+
+
+
+Terminal 1:
+cd server
+npm run dev
+
+Terminal 2:
+cd nlp-service
+conda activate base
+python -m uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+Terminal 3:
+cd server
+npm run worker: resume
+
+Terminal 4:
+cd server
+npm run worker: application
+
+Terminal 5:
+cd server
+npm run worker: interview
+
+Terminal 6:
+cd client
+npm run dev

@@ -1,0 +1,308 @@
+/* Responsive Utilities CSS */
+
+/* ===================================
+   RESPONSIVE CONTAINER & LAYOUT
+   =================================== */
+
+/* Full-width responsive container */
+.responsive-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+@media (max-width: 1024px) {
+  .responsive-container {
+    max-width: 100%;
+    padding: 0 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-container {
+    padding: 0 12px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE GRID SYSTEM
+   =================================== */
+
+.responsive-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .responsive-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ===================================
+   RESPONSIVE IMAGES
+   =================================== */
+
+.responsive-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.responsive-img-cover {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.responsive-img-contain {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* ===================================
+   RESPONSIVE TEXT
+   =================================== */
+
+.responsive-text {
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  line-height: 1.5;
+}
+
+.responsive-heading {
+  font-size: clamp(1.5rem, 5vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.responsive-subheading {
+  font-size: clamp(1.125rem, 3vw, 1.5rem);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* ===================================
+   RESPONSIVE PADDING & MARGINS
+   =================================== */
+
+.responsive-padding {
+  padding: clamp(16px, 3vw, 48px);
+}
+
+.responsive-padding-y {
+  padding-top: clamp(16px, 3vw, 48px);
+  padding-bottom: clamp(16px, 3vw, 48px);
+}
+
+.responsive-padding-x {
+  padding-left: clamp(12px, 2.5vw, 32px);
+  padding-right: clamp(12px, 2.5vw, 32px);
+}
+
+.responsive-margin {
+  margin: clamp(12px, 2vw, 32px);
+}
+
+.responsive-gap {
+  gap: clamp(12px, 2vw, 32px);
+}
+
+/* ===================================
+   RESPONSIVE FLEX LAYOUT
+   =================================== */
+
+.responsive-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.responsive-flex.column {
+  flex-direction: column;
+}
+
+.responsive-flex.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.responsive-flex.between {
+  justify-content: space-between;
+}
+
+/* ===================================
+   RESPONSIVE BUTTONS
+   =================================== */
+
+.responsive-btn {
+  padding: clamp(0.5rem, 1vw, 0.75rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.875rem, 2vw, 1rem);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+  .responsive-btn {
+    width: 100%;
+  }
+}
+
+/* ===================================
+   RESPONSIVE DISPLAY UTILITIES
+   =================================== */
+
+.hide-on-mobile {
+  display: block;
+}
+
+.show-on-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
+
+  .show-on-mobile {
+    display: block;
+  }
+}
+
+.hide-on-tablet {
+  display: block;
+}
+
+.show-on-tablet {
+  display: none;
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+  .hide-on-tablet {
+    display: none;
+  }
+
+  .show-on-tablet {
+    display: block;
+  }
+}
+
+/* ===================================
+   RESPONSIVE CARDS
+   =================================== */
+
+.responsive-card {
+  background: #ffffff;
+  border-radius: clamp(8px, 2vw, 16px);
+  padding: clamp(16px, 3vw, 24px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s ease;
+}
+
+.responsive-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+/* ===================================
+   RESPONSIVE SCROLLABLE
+   =================================== */
+
+.responsive-scrollable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsive-scrollable::-webkit-scrollbar {
+  height: 8px;
+}
+
+.responsive-scrollable::-webkit-scrollbar-track {
+  background: #f0f0f0;
+}
+
+.responsive-scrollable::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.responsive-scrollable::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+/* Hide hamburger on desktop */
+.main-hamburger,
+.candidate-hamburger,
+.recruiter-hamburger {
+  display: none !important;
+}
+
+/* Show hamburger only on mobile/tablet */
+@media (max-width: 768px) {
+  .main-hamburger,
+  .candidate-hamburger,
+  .recruiter-hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Hide mobile overlays on desktop */
+.main-overlay,
+.candidate-overlay,
+.recruiter-overlay {
+  display: none;
+}
+
+/* Show overlays only when mobile menu is open */
+@media (max-width: 768px) {
+  .main-overlay.show,
+  .candidate-overlay.show,
+  .recruiter-overlay.show {
+    display: block;
+  }
+}
+/* ===================================
+   RESPONSIVE BREAKPOINTS REFERENCE
+   =================================== */
+
+/*
+  Breakpoints used in this project:
+  
+  - Desktop:  > 1024px
+  - Tablet:   768px - 1024px
+  - Mobile:   < 768px
+  - Small Mobile: < 480px
+  
+  Media Query Examples:
+  
+  @media (max-width: 1024px) { ... }  // Tablet and smaller
+  @media (max-width: 768px) { ... }   // Mobile and smaller
+  @media (max-width: 480px) { ... }   // Small mobile
+  
+  @media (min-width: 769px) { ... }   // Tablet and larger
+  @media (min-width: 1025px) { ... }  // Desktop and larger
+*/

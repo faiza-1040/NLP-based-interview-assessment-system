@@ -1,0 +1,55 @@
+# =============================
+# NODE MODULES (all levels)
+# =============================
+node_modules/
+**/node_modules/
+
+# =============================
+# ENVIRONMENT / SECRET FILES
+# =============================
+.env
+.env.*
+**/.env
+**/.env.*
+
+# =============================
+# PYTHON
+# =============================
+venv/
+.venv/
+**/venv/
+**/.venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# =============================
+# BUILD ARTIFACTS
+# =============================
+dist/
+build/
+client/dist/
+client/build/
+
+# =============================
+# UPLOADS (user files - private)
+# =============================
+server/uploads/
+uploads/
+
+# =============================
+# LOGS
+# =============================
+*.log
+logs/
+npm-debug.log*
+
+# =============================
+# OS FILES
+# =============================
+.DS_Store
+Thumbs.db
+desktop.ini
+

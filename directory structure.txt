@@ -1,0 +1,261 @@
+MCVPARSER/
+|-- .gitignore
+|-- .vscode/
+|   +-- settings.json
+|-- IMPLEMENTATION_CHECKLIST.md
+|-- QUICK_REFERENCE.md
+|-- RESPONSIVE_DESIGN_GUIDE.md
+|-- RESPONSIVE_IMPLEMENTATION_SUMMARY.md
+|-- body.json
+|-- client/
+|   |-- .env
+|   |-- .gitignore
+|   |-- README.md
+|   |-- eslint.config.js
+|   |-- index.html
+|   |-- package-lock.json
+|   |-- package.json
+|   |-- public/
+|   |   |-- background.webp
+|   |   |-- interview.jpg
+|   |   |-- language.jpg
+|   |   |-- lecture.jpg
+|   |   |-- login.png
+|   |   |-- logo.jpg
+|   |   |-- logo.png
+|   |   |-- qa.jpg
+|   |   |-- t1.jpeg
+|   |   |-- t2.jpg
+|   |   |-- t3.jpg
+|   |   |-- t3.png
+|   |   +-- vite.svg
+|   |-- src/
+|   |   |-- App.css
+|   |   |-- App.jsx
+|   |   |-- assets/
+|   |   |   +-- react.svg
+|   |   |-- auth/
+|   |   |   |-- ChooseRole.jsx
+|   |   |   |-- ForgotPassword.jsx
+|   |   |   |-- ForgotStatus.jsx
+|   |   |   |-- Login.jsx
+|   |   |   |-- ResetPassword.jsx
+|   |   |   |-- Signup.jsx
+|   |   |   |-- login.css
+|   |   |   +-- signup.css
+|   |   |-- components/
+|   |   |   |-- AdminNavbar.jsx
+|   |   |   |-- CandidateNavbar.jsx
+|   |   |   |-- Footer.css
+|   |   |   |-- Footer.jsx
+|   |   |   |-- GoogleAuthButton.jsx
+|   |   |   |-- MainNavbar.css
+|   |   |   |-- MainNavbar.jsx
+|   |   |   |-- RecruiterNavbar.jsx
+|   |   |   |-- ResumePreview.jsx
+|   |   |   |-- TagInput.jsx
+|   |   |   |-- interview/
+|   |   |   |   +-- CodeEditor.jsx
+|   |   |   +-- templates/
+|   |   |       |-- CustomSectionsBlock.jsx
+|   |   |       |-- FlowCVTemplateBase.jsx
+|   |   |       |-- ModernTemplate.jsx
+|   |   |       |-- ModernTemplateV10.jsx
+|   |   |       |-- ModernTemplateV2.jsx
+|   |   |       |-- ModernTemplateV3.jsx
+|   |   |       |-- ModernTemplateV4.jsx
+|   |   |       |-- ModernTemplateV5.jsx
+|   |   |       |-- ModernTemplateV6.jsx
+|   |   |       |-- ModernTemplateV7.jsx
+|   |   |       |-- ModernTemplateV8.jsx
+|   |   |       +-- ModernTemplateV9.jsx
+|   |   |-- context/
+|   |   |   +-- authContext.jsx
+|   |   |-- index.css
+|   |   |-- layouts/
+|   |   |   |-- AdminLayout.css
+|   |   |   |-- AdminLayout.jsx
+|   |   |   |-- AuthLayout.css
+|   |   |   |-- AuthLayout.jsx
+|   |   |   |-- CandidateLayout.css
+|   |   |   |-- CandidateLayout.jsx
+|   |   |   |-- RecruiterLayout.css
+|   |   |   +-- RecruiterLayout.jsx
+|   |   |-- lookups/
+|   |   |   +-- formOptions.js
+|   |   |-- main.jsx
+|   |   |-- pages/
+|   |   |   |-- Admin/
+|   |   |   |   |-- AdminProfile.css
+|   |   |   |   |-- Dashboard.jsx
+|   |   |   |   |-- ManageJobs.jsx
+|   |   |   |   |-- ManageUsers.jsx
+|   |   |   |   |-- Profile.jsx
+|   |   |   |   |-- Reports.jsx
+|   |   |   |   |-- SiteSettings.jsx
+|   |   |   |   |-- VerifyRecruiters.jsx
+|   |   |   |   +-- dashboard.css
+|   |   |   |-- Candidate/
+|   |   |   |   |-- AppliedJobs.css
+|   |   |   |   |-- AppliedJobs.jsx
+|   |   |   |   |-- CVRanking.jsx
+|   |   |   |   |-- CandidatePages.css
+|   |   |   |   |-- Dashboard.jsx
+|   |   |   |   |-- Interview.jsx
+|   |   |   |   |-- InterviewInvitation.jsx
+|   |   |   |   |-- JobApply.jsx
+|   |   |   |   |-- JobSearch.css
+|   |   |   |   |-- JobSearch.jsx
+|   |   |   |   |-- ManageCV.css
+|   |   |   |   |-- ManageCV.jsx
+|   |   |   |   |-- MockAnalyticsPage.jsx
+|   |   |   |   |-- MockSessionPage.jsx
+|   |   |   |   |-- MockStartPage.jsx
+|   |   |   |   |-- Profile.css
+|   |   |   |   |-- Profile.jsx
+|   |   |   |   |-- ResumeBuilder.css
+|   |   |   |   |-- ResumeBuilder.jsx
+|   |   |   |   +-- mockPages.css
+|   |   |   |-- LandingPage.css
+|   |   |   |-- LandingPage.jsx
+|   |   |   +-- Recruiter/
+|   |   |       |-- ApplicationsPage.css
+|   |   |       |-- ApplicationsPage.jsx
+|   |   |       |-- Dashboard.jsx
+|   |   |       |-- MyJobPosts.jsx
+|   |   |       |-- PostJob.jsx
+|   |   |       |-- Profile.jsx
+|   |   |       |-- RecruiterDashboard.css
+|   |   |       |-- RecruiterDeclined.jsx
+|   |   |       |-- RecruiterOnboarding.css
+|   |   |       |-- RecruiterOnboarding.jsx
+|   |   |       |-- RecruiterPending.jsx
+|   |   |       |-- RecruiterProfile.css
+|   |   |       |-- SearchCandidates.jsx
+|   |   |       |-- ViewAppliedCandidates.css
+|   |   |       |-- ViewAppliedCandidates.jsx
+|   |   |       |-- jobDetails.jsx
+|   |   |       |-- myjobposts.css
+|   |   |       +-- postjob.css
+|   |   |-- responsive.css
+|   |   +-- utils/
+|   |       |-- PrivateRoute.jsx
+|   |       |-- api.js
+|   |       |-- applicationApi.js
+|   |       |-- applicationStatus.js
+|   |       |-- jobApi.js
+|   |       |-- mockInterviewApi.js
+|   |       +-- resumeApi.js
+|   +-- vite.config.js
+|-- directory structure.txt
+|-- installed library.txt
+|-- nlp-service/
+|   |-- .env
+|   |-- interview_routes.py
+|   |-- main.py
+|   |-- mockInterview_routes.py
+|   |-- requirements-clean.txt
+|   |-- requirements.txt
+|   |-- services/
+|   |   |-- _init_.py
+|   |   |-- ai_relevance.py
+|   |   |-- bm25_index.py
+|   |   |-- bm25_search.py
+|   |   |-- camera_detection.py
+|   |   |-- docling_ocr.py
+|   |   |-- groq_client.py
+|   |   |-- hf_embeddings.py
+|   |   |-- interview_service.py
+|   |   |-- llm_client.py
+|   |   |-- mockInterview_service.py
+|   |   |-- normalizers.py
+|   |   |-- pdf_generator.py
+|   |   |-- resume_pipeline.py
+|   |   |-- resume_render.py
+|   |   |-- resume_structured_fallback.py
+|   |   |-- rule_matcher.py
+|   |   |-- sanitizer.py
+|   |   |-- semantic_matcher.py
+|   |   |-- semantic_relevance.py
+|   |   |-- test_bm25.py
+|   |   +-- text_builders.py
+|   |-- test_interview_eval.py
+|   +-- test_scoring.py
+|-- package-lock.json
+|-- package.json
+|-- readme.md
++-- server/
+    |-- .env
+    |-- controllers/
+    |   |-- accountController.js
+    |   |-- applicationController.js
+    |   |-- authController.js
+    |   |-- interviewController.js
+    |   |-- jobController.js
+    |   |-- mockInterviewController.js
+    |   |-- resumeController.js
+    |   |-- resumeRenderController.js
+    |   |-- resumeUploadController.js
+    |   +-- transcribeController.js
+    |-- hashAdminPassword.js
+    |-- index.js
+    |-- middleware/
+    |   |-- authMiddleware.js
+    |   |-- rateLimitMiddleware.js
+    |   +-- uploadMiddleware.js
+    |-- models/
+    |   |-- AdminProfile.js
+    |   |-- Application.js
+    |   |-- CandidateProfile.js
+    |   |-- Interview.js
+    |   |-- Job.js
+    |   |-- ProcessedResume.js
+    |   |-- RecruiterProfile.js
+    |   |-- Resume.js
+    |   |-- User.js
+    |   +-- mockSessionModel.js
+    |-- package-lock.json
+    |-- package.json
+    |-- queue/
+    |   |-- applicationQueue.js
+    |   |-- interviewQueue.js
+    |   |-- redis.js
+    |   +-- resumeQueue.js
+    |-- routes/
+    |   |-- accountRoutes.js
+    |   |-- adminRoutes.js
+    |   |-- applicationRoutes.js
+    |   |-- authRoutes.js
+    |   |-- interviewRoutes.js
+    |   |-- jobRoutes.js
+    |   |-- mockInterviewRoutes.js
+    |   |-- profileRoutes.js
+    |   |-- recruiterProfileRoutes.js
+    |   |-- resumeRoutes.js
+    |   +-- transcribeRoutes.js
+    |-- scripts/
+    |   +-- clearResumeQueue.js
+    |-- services/
+    |   |-- mockGroqService.js
+    |   +-- mockInterviewGroqService.js
+    |-- utils/
+    |   |-- applicationApi.js
+    |   |-- cloudinary.js
+    |   |-- cookieOptions.js
+    |   |-- fileStorage.js
+    |   |-- groqWhisperClient.js
+    |   |-- mailer.js
+    |   |-- nlpInterviewClient.js
+    |   |-- nlpMatchClient.js
+    |   |-- nlpMockInterviewClient.js
+    |   |-- nlpPdfClient.js
+    |   |-- pdfGenerator.js
+    |   |-- processedResumeService.js
+    |   |-- queryPreprocess.js
+    |   |-- skills-dictionary.txt
+    |   |-- spell.js
+    |   +-- tokenService.js
+    +-- workers/
+        |-- applicationWorker.js
+        |-- interviewWorker.js
+        +-- resumeWorker.js

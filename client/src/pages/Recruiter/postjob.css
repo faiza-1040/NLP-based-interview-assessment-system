@@ -1,0 +1,459 @@
+/* client/src/pages/Recruiter/postjob.css */
+
+/* Outer wrapper */
+.postjob {
+  padding: 24px 0;
+}
+
+/* Main form: 90% of viewport width, centered */
+.postjob-form {
+  width: 90vw;           /* 90% of viewport width */
+  max-width: 1200px;     /* optional cap */
+  margin: 0 auto;        /* center -> 5vw left/right visually */
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+.postjob-title {
+  margin: 0 0 8px;
+  color: #1f2937; /* slightly softer dark heading */
+}
+
+/* General form elements */
+.postjob-form * {
+  box-sizing: border-box;
+}
+
+.postjob-form label {
+  color: #1f2937; /* "black" but a bit softer */
+  font-weight: 400; /* no bold for labels */
+  display: block;
+  margin-bottom: 4px;
+}
+
+.postjob-form input[type="text"],
+.postjob-form input[type="number"],
+.postjob-form input[type="date"],
+.postjob-form select,
+.postjob-form textarea {
+  width: 100%;
+  appearance: none;
+  background: #ffffff !important;
+  color: #111827 !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 8px;
+  padding: 10px 12px;
+  height: 44px; /* fixed height for normal fields */
+}
+
+/* Make SKILLS box bigger */
+.postjob-form input[name="skillsRequired"] {
+  height: 52px;
+}
+
+/* Make remote LOCATION box bigger */
+.postjob-form input[name="remoteLocation"] {
+  height: 52px;
+}
+
+/* Application deadline: calendar icon gray & right */
+.postjob-form input[name="applicationDeadline"] {
+  position: relative;
+  padding-right: 32px; /* space for calendar icon */
+}
+
+/* WebKit browsers */
+.postjob-form input[name="applicationDeadline"]::-webkit-calendar-picker-indicator {
+  color: transparent;
+  opacity: 1;
+  filter: grayscale(1);      /* gray icon */
+  cursor: pointer;
+}
+
+/* Firefox (limited styling support) */
+.postjob-form input[name="applicationDeadline"]::-moz-focus-inner {
+  border: 0;
+}
+
+/* Textarea still taller */
+.postjob-form textarea {
+  min-height: 180px;
+  line-height: 1.5;
+  resize: vertical;
+  height: auto;
+}
+
+.postjob-form ::placeholder {
+  color: #6b7280;
+  opacity: 1;
+}
+
+/* Global checkbox styling */
+.postjob-form input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  appearance: auto;
+  accent-color: #3b82f6;       /* blue when checked */
+  background-color: #ffffff;
+  border: 1px solid #111827;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Global radio styling (for yes/no, work arrangement, rate skills) */
+.postjob-form input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #3b82f6;       /* blue when checked */
+  background-color: #ffffff;
+  border: 1px solid #111827;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+/* Buttons */
+.postjob-form button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  border: none;
+  background-color: #3b82f6;
+  color: white;
+}
+
+.postjob-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.postjob-form button:disabled {
+  background-color: #93c5fd;
+  cursor: not-allowed;
+}
+
+.postjob-form button[type="button"] {
+  background-color: #e5e7eb;
+  color: #374151;
+}
+
+.postjob-form button[type="button"]:hover {
+  background-color: #d1d5db;
+}
+
+/* Rate Skills */
+.postjob-rate {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.rate-skills-heading {
+  font-size: 0.95rem;
+  color: #111827;   /* darker so it's visible */
+  margin-bottom: 6px;
+}
+
+/* Each skill row */
+.postjob-rate-row {
+  margin-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 20px;       /* consistent space between skill + options */
+  flex-wrap: wrap;
+}
+
+/* Skill name first */
+.rate-skill-name {
+  min-width: 120px;
+  font-size: 0.9rem;
+  color: #111827;
+}
+
+/* Text smaller for rate options */
+.rate-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+  font-size: 0.85rem;  /* smaller font size */
+}
+
+/* Remote section */
+.postjob-remote {
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.remote-question {
+  font-size: 0.9rem;
+}
+
+.small-inline-label {
+  font-size: 0.9rem;
+}
+
+.mt {
+  margin-top: 8px;
+}
+
+.ml {
+  margin-left: 12px;
+}
+
+/* Layout rows */
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/* Description counter */
+.postjob-count {
+  margin-left: auto;
+  font-size: 12px;
+}
+
+.postjob-count.bad {
+  color: #b91c1c;
+}
+
+.postjob-count.good {
+  color: #166534;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.actions button:last-child {
+  background-color: #fca5a5;
+  color: #b91c1c;
+}
+
+.actions button:last-child:hover {
+  background-color: #f87171;
+}
+
+/* ---------- Quill editor tweaks ---------- */
+.postjob-editor {
+  width: 100%;
+}
+
+.postjob-editor .ql-toolbar {
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+}
+
+.postjob-editor .ql-container {
+  border-radius: 0 0 8px 8px;
+  background: #ffffff;
+  color: #111827;
+  min-height: 240px;
+  width: 100%;
+}
+
+.postjob-editor .ql-editor {
+  min-height: 220px;
+}
+
+/* --- Custom Screening Questions Styles --- */
+.custom-q-toggle {
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.postjob-custom-questions {
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #f9fafb;
+}
+
+.postjob-custom-questions h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #1f2937;
+  font-weight: 500;
+  font-size: 0.95rem; /* smaller heading */
+}
+
+.custom-q-input-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.custom-q-input-row input {
+  flex-grow: 1;
+  height: 44px;
+}
+
+/* Add + Save Edit buttons blue */
+.custom-q-input-row button {
+  flex-shrink: 0;
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+/* Cancel edit button */
+.custom-q-input-row .cancel-edit-btn {
+  background-color: #fef3c7;
+  color: #ca8a04;
+}
+
+.custom-q-input-row .cancel-edit-btn:hover {
+  background-color: #fde68a;
+}
+
+/* Questions list */
+.custom-q-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.custom-q-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+}
+
+.q-actions button {
+  padding: 5px 10px;
+  font-size: 0.85rem;
+  margin-left: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #374151;
+}
+
+/* Edit button blue */
+.q-actions .edit-btn {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+}
+
+.q-actions .edit-btn:hover {
+  background-color: #2563eb;
+}
+
+.q-actions .delete-btn {
+  background-color: #fef2f2;
+  color: #fff9f9;
+  border-color: #fca5a5;
+}
+
+.q-actions .delete-btn:hover {
+  background-color: #fee2e2;
+}
+
+.no-questions-msg {
+  margin: 10px 0 0;
+  padding: 10px;
+  text-align: center;
+  color: #6b7280;
+  border: 1px dashed #d1d5db;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* Work arrangement options (instead of dropdown) */
+.work-arrangement-options {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.wa-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 400; /* no bold */
+}
+
+.wa-option input {
+  margin: 0;
+}
+
+.wa-option.active {
+  border-color: #3b82f6;
+  background-color: #eff6ff;
+}
+
+/* Salary toggle switch */
+.salary-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.salary-toggle-label {
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+/* Switch styling */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 26px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #e5e7eb;
+  transition: 0.2s;
+  border-radius: 999px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  top: 3px;
+  background-color: #ffffff;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+  background-color: #3b82f6;
+}
+
+.switch input:checked + .slider::before {
+  transform: translateX(20px);
+}

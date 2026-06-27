@@ -1,0 +1,83 @@
+{
+  "job": {
+    "title": "Full-Stack Web Developer",
+    "description": "<p>We are seeking a Full-Stack Web Developer to join our engineering team. The developer will build and maintain responsive web applications, develop REST APIs, integrate frontend and backend modules, and work with databases. The ideal candidate should have strong skills in HTML, CSS, JavaScript, React, Node.js, Express.js, and Git. Familiarity with Docker and modern development workflows is a plus.</p>",
+    "skillsRequired": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Reactjs",
+      "Node.js",
+      "Express.js",
+      "REST API development",
+      "Git & GitHub",
+      "Familiarity with Docker (optional)"
+    ],
+    "rateSkills": {
+      "HTML": "Must Have",
+      "CSS": "Must Have",
+      "Reactjs": "Must Have",
+      "Node_js": "Must Have",
+      "Express_js": "Must Have",
+      "REST_API_development": "Must Have",
+      "Git_&_GitHub": "Nice to Have",
+      "Familiarity_with_Docker_(optional)": "Nice to Have"
+    },
+    "experience": "1-2 Years",
+    "qualification": "Bachelors",
+    "location": "Lahore",
+    "careerLevel": "Entry Level"
+  },
+  "resume": {
+    "scoringText": "A motivated Computer Science graduate with hands-on experience in frontend and backend development. Strong skills in React, JavaScript, HTML, CSS. Basic experience with Node.js, Express.js, REST APIs. Familiar with Git & GitHub and Docker.",
+    "structured": {
+      "skills": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Express.js",
+        "REST API Basics",
+        "Git & GitHub",
+        "Docker"
+      ],
+      "experience": [
+        {
+          "title": "Frontend Web Intern",
+          "company": "WebTech Solutions",
+          "from": "Jun 2024",
+          "to": "Aug 2024",
+          "currently": false,
+          "description": "Developed UI components with React, HTML, CSS."
+        },
+        {
+          "title": "Backend Trainee",
+          "company": "CodeFoundry",
+          "from": "Jan 2024",
+          "to": "Apr 2024",
+          "currently": false,
+          "description": "Built small Node.js and Express.js apps."
+        }
+      ],
+      "education": [
+        {
+          "degree": "BS in Computer Science",
+          "field": "Computer Science",
+          "institution": "COMSATS University Lahore",
+          "from": "",
+          "to": "2024",
+          "currently": false
+        }
+      ],
+      "languages": [
+        { "language": "HTML", "level": "Upper Intermediate (B2)" },
+        { "language": "CSS", "level": "Intermediate (B1)" },
+        { "language": "JavaScript", "level": "Upper Intermediate (B2)" },
+        { "language": "React", "level": "Intermediate (B1)" },
+        { "language": "Node.js", "level": "Elementary (A2)" },
+        { "language": "Express.js", "level": "Elementary (A2)" }
+      ]
+    }
+  }
+}
